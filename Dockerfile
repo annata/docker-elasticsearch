@@ -1,2 +1,3 @@
-FROM docker.elastic.co/elasticsearch/elasticsearch:5.6.2
-RUN elasticsearch-plugin install analysis-smartcn
+FROM elasticsearch:2-alpine
+COPY elasticsearch.yml /usr/share/elasticsearch/config/
+RUN plugin install analysis-smartcn
